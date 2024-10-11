@@ -41,7 +41,14 @@
               div.classList.add("color");
               div.style.backgroundColor = color;
               div.style.width = `calc(100%/ ${colors.length})`;
-              //   div.style.width = "12rem";
+
+              const span = document.createElement("span");
+              span.textContent = color;
+              div.appendChild(span);
+
+              div.addEventListener("click", function () {
+                navigator.clipboard.writeText(color);
+              });
 
               container.appendChild(div);
             }

@@ -22,7 +22,8 @@ MODEL='gpt-4-turbo'
 def generate_colors(prompt):
     prompt_system = """
     Eres un asistente generador de paletas de colores que responde a indicaciones de texto para paletas de colores. 
-    Debes generar paletas de colores que se ajusten al tema, estado de ánimo o instrucciones dadas en la indicación. 
+    Debes generar paletas de colores que se ajusten al tema, estado de ánimo o instrucciones dadas en la indicación.
+    Los colores deben estar ordenados en la paleta.
     Las paletas deben tener entre 2 y 8 colores.
 
 

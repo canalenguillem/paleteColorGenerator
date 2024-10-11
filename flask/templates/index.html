@@ -15,6 +15,7 @@
       <input type="text" name="prompt" id="" />
       <button>submit</button>
     </form>
+    <div class="container"></div>
     <script>
       const form = document.querySelector("#form");
       form.addEventListener("submit", function (e) {
@@ -32,7 +33,19 @@
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log(data);
+            const colors = data.colors;
+            const container = document.querySelector(".container");
+            console.log("colors: " + colors);
+            container.textContent = "";
+            for (const color of colors) {
+              const div = document.createElement("div");
+              div.classList.add("color");
+              div.style.backgroundColor = color;
+              div.style.width = `calc(100%/ ${colors.length})`;
+              //   div.style.width = "12rem";
+
+              container.appendChild(div);
+            }
           });
       });
     </script>

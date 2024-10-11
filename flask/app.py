@@ -64,6 +64,7 @@ def prompt_to_palette():
     prompt=request.form.get("prompt")
     print(f"PROMPT {prompt}")
     colors=generate_colors(prompt)
+    print(f"colors {colors}")
 
     return {"colors":colors}
 

@@ -1,0 +1,38 @@
+# Ignorar entornos virtuales
+.venv/
+env/
+venv/
+
+# Archivos de configuración específicos de entornos locales
+.env
+
+# Archivos generados por Jupyter
+.ipynb_checkpoints/
+
+# Dependencias de Python que pueden ser recreadas a partir de requirements.txt
+__pycache__/
+*.py[cod]
+
+# Archivos y carpetas de control de versiones de paquetes
+*.egg-info/
+.eggs/
+
+# Archivos de configuración de editores y sistemas operativos
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+
+# Ignorar archivos generados por sistemas de backup o de recuperación
+*.bak
+*.backup
+
+# Archivos temporales
+*.tmp
+*.temp

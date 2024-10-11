@@ -62,6 +62,7 @@ def index():
 def prompt_to_palette():
     #open ai completion call
     prompt=request.form.get("prompt")
+    print(f"PROMPT {prompt}")
     colors=generate_colors(prompt)
 
     return {"colors":colors}

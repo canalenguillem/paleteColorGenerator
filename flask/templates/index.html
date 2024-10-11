@@ -11,5 +11,30 @@
   </head>
   <body>
     <h1>Generador de colores</h1>
+    <form method="POST" id="form">
+      <input type="text" name="prompt" id="" />
+      <button>submit</button>
+    </form>
+    <script>
+      const form = document.querySelector("#form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const prompt = form.elements.prompt.value;
+        console.log("prompt submited " + prompt);
+        fetch("/paleta", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            prompt: prompt,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+          });
+      });
+    </script>
   </body>
 </html>

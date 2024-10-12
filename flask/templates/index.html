@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Generador de paletas de colores</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <form method="POST" id="form">
@@ -15,45 +12,6 @@
       <button class="btn">submit</button>
     </form>
     <div class="container"></div>
-    <script>
-      const form = document.querySelector("#form");
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const prompt = form.elements.prompt.value;
-        console.log("prompt submited " + prompt);
-        fetch("/paleta", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: new URLSearchParams({
-            prompt: prompt,
-          }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            const colors = data.colors;
-            const container = document.querySelector(".container");
-            console.log("colors: " + colors);
-            container.textContent = "";
-            for (const color of colors) {
-              const div = document.createElement("div");
-              div.classList.add("color");
-              div.style.backgroundColor = color;
-              div.style.width = `calc(100%/ ${colors.length})`;
-
-              const span = document.createElement("span");
-              span.textContent = color;
-              div.appendChild(span);
-
-              div.addEventListener("click", function () {
-                navigator.clipboard.writeText(color);
-              });
-
-              container.appendChild(div);
-            }
-          });
-      });
-    </script>
+    <script src="js/app.js"></script>
   </body>
 </html>

@@ -49,7 +49,9 @@ def generate_colors(prompt):
 
 
 app=Flask(__name__,
-          template_folder='templates'
+          template_folder='templates',
+          static_url_path='',
+          static_folder='static'  # folder for static files (css, js, images)
           )
 
 

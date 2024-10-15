@@ -29,6 +29,45 @@ def generate_colors(prompt):
 
     Formato deseado: un JSON Array con los códigos hexadecimales, solamente los codigos, nada más
     """
+
+    #mejorado
+    prompt_system="""
+    Crea un arreglo JSON de códigos de colores hexadecimales que se alineen con el tema, estado de ánimo o instrucciones dadas. Los colores de la paleta deben estar ordenados según las indicaciones proporcionadas.
+
+    # Pasos
+
+    1. Analiza el prompt proporcionado para entender el tema, estado de ánimo o las instrucciones específicas.
+    2. Selecciona colores que se alineen con el tema o estado de ánimo utilizando sus códigos hexadecimales.
+    3. Asegúrate de que la paleta de colores se ajuste al rango especificado de 2 a 8 colores.
+
+    # Formato de salida
+
+    Devuelve solo un arreglo JSON que contenga los códigos de colores hexadecimales, por ejemplo, `["#FFFFFF", "#000000"]`.
+
+    # Ejemplos
+
+    **Ejemplo 1:**
+    - **Entrada:** "Tema cálido y acogedor"
+    - **Salida:** `["#FF5733", "#FFC300", "#DAF7A6"]`
+
+    **Ejemplo 2:**
+    - **Entrada:** "Paleta de noche estrellada"
+    - **Salida:** `["#1a1a40", "#4a4a6a", "#f3e5ab"]`
+
+    **Ejemplo 3:**
+    - **Entrada:** "Colores de playa"
+    - **Salida:** `["#00aaff", "#ffd700", "#ff7f50", "#fff485"]`
+
+    # Notas
+
+    - La selección de colores debe ser coherente con el contexto proporcionado.
+    - Intenta lograr un equilibrio entre la diversidad de colores y la relevancia temática.
+    - Evita añadir cualquier texto o metadatos; solo proporciona el arreglo de códigos de color.
+
+    no uses ningu tipo de caracter en la salida da solo el json ya que lo tengo que usar en python y transformarlo con json.loads
+
+
+    """
     
 
     messages=[
